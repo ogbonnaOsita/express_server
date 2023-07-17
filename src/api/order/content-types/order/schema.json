@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "order",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "products": {
+      "type": "json"
+    },
+    "shipping": {
+      "type": "json"
+    },
+    "amount": {
+      "type": "decimal"
+    },
+    "paymentId": {
+      "type": "biginteger",
+      "unique": true
+    },
+    "buyerEmail": {
+      "type": "email",
+      "unique": false
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Delivered",
+        "In Progress",
+        "Unsuccessful"
+      ],
+      "default": "In Progress",
+      "required": false
+    }
+  }
+}
